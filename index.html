@@ -14,6 +14,26 @@
 <h1><a href="grid1-correct-lambda_min-random-s0-tfs.html">Random results on queries from correct predictions</a></h1>
 <h1><a href="grid1-wrong-lambda_min-random-s0-tfs.html">Random results on queries from wrong predictions</a></h1>
 <h3>Note: the "Random results" are intended to serve as a baseline. For each query it will randomly select 5 traning datapoints with the same label as the query label.</h3>
+        
+        <p>Results show that most of the selected images share similar semantics, color, texture etc. with the query. </p>
+<p>  For example, for queries with correct main model prediction: </p>
+<ul>
+<li>query-#4: similar semantics (men in red on horses)</li>
+<li>query-#18: similar color &amp; texture</li>
+<li>query-#22: similar semantics</li>
+<li>query-#25: similar color &amp; posture</li>
+</ul>
+<p>  For queries with incorrect predictions:</p>
+<ul>
+<li>query-#0, query-#1 &amp; query-#15: blur &amp; overexposure</li>
+<li>query-#8: similar color</li>
+<li>query-#18: similar color &amp; posture</li>
+<li>query-#21: similar color, texture and shape</li>
+<li>query-#31: grayscale</li>
+<li>query-#39: similar semantics (animal on the grass), color and posture</li>
+</ul>
+<p>  This information is useful to diagnose the model. For example, we can deduce the misprediction of #31 is caused by the grayscale which is rare in the training dataset. Similarly, for #0, #1 and #15, the misprediction is likely due to blur and overexposure. For #39, the misprediction is caused by the dog image with a similar environment, posture and color.</p>
+
     </body>
 
     </html>
